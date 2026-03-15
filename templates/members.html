@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>👥 Members</h2>
+
+<h3>Add Member</h3>
+
+<form method="POST" action="/add_member">
+
+<input type="text" name="name" placeholder="Member Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<button class="btn">Add Member</button>
+
+</form>
+
+<br>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+</tr>
+
+{% for m in members %}
+
+<tr>
+<td>{{m[0]}}</td>
+<td>{{m[1]}}</td>
+<td>{{m[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

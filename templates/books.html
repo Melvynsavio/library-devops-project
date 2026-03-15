@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>📚 Books Management</h2>
+
+<h3>Add New Book</h3>
+
+<form action="/add_book" method="POST">
+
+<input type="text" name="title" placeholder="Book Title" required>
+
+<input type="text" name="author" placeholder="Author" required>
+
+<button class="btn">Add Book</button>
+
+</form>
+
+<br>
+
+<h3>All Books</h3>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Author</th>
+<th>Actions</th>
+</tr>
+
+{% for book in books %}
+
+<tr>
+
+<td>{{book[0]}}</td>
+<td>{{book[1]}}</td>
+<td>{{book[2]}}</td>
+
+<td>
+
+<a href="/edit_book/{{book[0]}}">
+<button class="btn">Edit</button>
+</a>
+
+<a href="/delete_book/{{book[0]}}">
+<button class="btn" style="background:red;">Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Search Books</title>
+</head>
+
+<body>
+
+<h1>Search Books</h1>
+
+<form method="POST">
+
+<input type="text" name="keyword" placeholder="Enter Book Title">
+
+<button type="submit">Search</button>
+
+</form>
+
+<br>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Author</th>
+</tr>
+
+{% for book in books %}
+
+<tr>
+<td>{{book[0]}}</td>
+<td>{{book[1]}}</td>
+<td>{{book[2]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Edit Book</h2>
+
+<form method="POST">
+
+<input type="text" name="title" value="{{book[1]}}" required>
+
+<input type="text" name="author" value="{{book[2]}}" required>
+
+<br><br>
+
+<button class="btn">Update Book</button>
+
+</form>
+
+{% endblock %}
